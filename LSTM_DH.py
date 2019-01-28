@@ -13,9 +13,9 @@ def LSTM_DH(X_train,Y_train,user_Id,dict_user_X_test):
 
     # Hyper Parameters
     BATCH_SIZE = 64
-    TIME_STEP = 8          # rnn time step / image height
-    INPUT_SIZE = 14        # rnn input size / image width
-    LR = 0.01               # learning rate
+    TIME_STEP = 8          
+    INPUT_SIZE = 14       
+    LR = 0.01           
     hidden_state_dim = 14
 
             
