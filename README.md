@@ -1,2 +1,2 @@
 # Project Sleep-Analyze
-We want to build learning to 'Rank model' in all insomnia patients
+We want to build 'learning to rank model' for all insomnia patients
