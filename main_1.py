@@ -1,5 +1,7 @@
 import argparse
 
+from preprocess import *
+
 import pandas as pd
 import numpy as np
 import random
