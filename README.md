@@ -2,6 +2,13 @@
 We want to build 'learning to rank model' for all insomnia patients
 
 
+### Required data format
+1. data is .csv 
+2. The first column is userId and other columns is feature data
+3. For all users ,their experiment day need to be same
+
+
+
 ### Required packages
 The code has been tested running under Python 3.6.6, with the following packages installed (along with their dependencies):
 
