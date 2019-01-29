@@ -6,7 +6,9 @@ We want to build 'learning to rank model' for all insomnia patients
 1. data is .csv 
 2. The first column is userId and other columns is feature data
 3. For all users ,their experiment day need to be same
-
+4. For example
+![](https://github.com/hsuchengmath/Sleep_Analyze/blob/master/user1.png)
+![](https://github.com/hsuchengmath/Sleep_Analyze/blob/master/user2.png)
 
 
 ### Required packages
