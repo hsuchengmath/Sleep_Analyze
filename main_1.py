@@ -58,9 +58,18 @@ if __name__ == '__main__':
     ##setting mask matrix and can set the number of missong data
     mask_dataframe = Mask_dataframe(sleep_activity_data_csv)
     mask_window = Mask_window(mask_dataframe)
-
+ 
     ##Building GAIN model
     generate_window = GAIN(window,mask_window,epouh)
 
-    ##Transform generate window into impute data
+    
+    ##Transform generate window into impute data    
     impute_data_standard,impute_data = Delete_window(window_number,generate_window,user_Id,feature_name,max_,min_)
+    
+    '''
+    impute_data is a dataframe withod min-max normalization
+    impute_data_standard is a dataframe(min-max normalization)
+    
+    '''
+    
+    
