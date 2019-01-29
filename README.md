@@ -32,6 +32,7 @@ The code has been tested running under Python 3.6.6, with the following packages
 ```
 $ python main_1.py --If your data exist missing values ,you need to run main_1.py for imputing it 
                      (Notice :  You save impute_data_stanard by .csv)
-$ python main_2.py --Loading you just saved csv file or original csv file and run main_2.py and you'll get user's rank!!
+$ python main_2.py --Loading you just saved csv file or original csv file(not exist missing value) and run main_2.py and                 
+                     you'll get user's rank!!
 
 ```
