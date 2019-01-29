@@ -13,7 +13,8 @@ The code has been tested running under Python 3.6.6, with the following packages
 
 ### Running the code
 ```
-$ python main_1.py --dataset movie (or --dataset book)
-$ python main_2.py --dataset movie (or --dataset book)
-$ python main.py --dataset movie (note: use -h to check optional arguments)
+$ python main_1.py --If your data exist missing values ,you need to run main_1.py for imputing it 
+                     (Notice :  You save impute_data_stanard by .csv)
+$ python main_2.py --Loading you just saved csv file and run main_2.py and you'll get user's rank!!
+
 ```
