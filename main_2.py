@@ -22,7 +22,7 @@ if __name__ == '__main__':
     args = Argument()
 
     input_data_path= input(">>> Input File path : ")
-    sleep_efficiency_location = input(">>>Main Effect Feature : ")+1
+    sleep_efficiency_location = input(">>>Main Effect Feature : ")-1
     experiment_time = input(">>>Experiment time : ")
     input_data_csv = pd.read_csv(input_data_path)
     user_Id = list(set(input_data_csv["userId"]))
