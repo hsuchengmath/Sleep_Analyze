@@ -23,8 +23,12 @@ if __name__ == '__main__':
     args = Argument()
 
     ##Setting
-    epouh = 20000
-    file_path = file_path + '.csv'
+    input_data_path= input(">>> Input File path : ")
+    input_save_path = input(">>> Input Save path + File name.csv : ")
+    epouh= input(">>> Input Epouh  : ")
+
+    #epouh = 20000
+    file_path = input_data_path
 
     ##loading data
     sleep_activity_data_csv = pd.read_csv(file_path)
@@ -65,6 +69,9 @@ if __name__ == '__main__':
     
     ##Transform generate window into impute data    
     impute_data_standard,impute_data = Delete_window(window_number,generate_window,user_Id,feature_name,max_,min_)
+    
+    ##Saving
+    impute_data_standard.to_csv(input_save_path)
     
     '''
     impute_data is a dataframe withod min-max normalization
