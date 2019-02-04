@@ -58,9 +58,6 @@ if __name__ == '__main__':
         true_rank = Rank(day,test_No,user_Id,dict_user_Y_test)
         predict_rank = Rank(day,test_No,user_Id,dict_user_X_predict)
         rank = Rank_sort(true_rank,predict_rank)
-        #K = Kendall_Rank_Coefficicent(rank)
-        #S = Spesrson_Rank_Coefficicent(rank)
-        #N = NDCG_Function(rank)
-        #P = Precision_k(rank,20)
+ 
         print(" Rank : ",predict_rank)
     
