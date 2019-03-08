@@ -1,0 +1,5 @@
+{
+  "GAIN": 
+         {"file_path": "....../sample_data_sleeps_ORIGINAL.csv", "save_path": "....../impute_data.csv",  "epoch": 20000}
+
+}
