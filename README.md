@@ -6,6 +6,12 @@ We want to build 'learning to rank model' for all insomnia patients
 
 
 
+### Data
+Table 1 displays the list of data features gathered by the Fitbit device and the user surveys. All features without "onbed_min" (which was excluded due to its strong correlation with other sleep features.) were used in this project. 
+Sample data from four randomly selected users is uploaded in data folder. sample_data_sleeps_ORIGINAL.csv includes the data from Modality 1 and 2, and sample_meta-data_sleeps.csv includes the data from Modality 3.
+
+![](./image/data_description_rev.png)
+
 
 ### Required data format
 1. data is .csv 
@@ -28,11 +34,50 @@ The code has been tested running under Python 3.6.6, with the following packages
 - tensorflow == 1.12.0
 - scikit-learn == 0.20.2
 
-### Running the code
+### Part 1. MISSING DATA IMPUTATION
+##### Model parameter
+You can set parameter by modifying GAIN/parameter.json file. In our paper, to make an imputation , we used parameters as 
+follows.
+
 ```
-$ python main_1.py --If your data exist missing values ,you need to run main_1.py for imputing it 
-                     (Notice :  You save impute_data_stanard by .csv)
-$ python main_2.py --Loading you just saved csv file or original csv file(not exist missing value) and run main_2.py and                 
-                     you'll get user's rank!!
+
+"GAIN": 
+      {"file_path": "....../sample_data_sleeps_ORIGINAL.csv", "save_path": "....../impute_data.csv",  "epoch": 20000}
+      
+```
+
+##### How to Run
+```
+1. Setting the path of parameter.json in main.py
+   (For example : If your parameter.json is located in 'user/Documents/data/parameter.json',you should set it as json_path in 
+    main.py)
+2. Setting parameter in parameter.json:
+   (For example : If your sample_data_sleeps_ORIGINAL.csv is saved in 'user/Documents/data/sample_data_sleeps_ORIGINAL.csv',
+    you should set it as parameter in parameter.json ; If you want to save imputed data,you should set the path whwere you       
+    want to save a parameter in parameter.json)
+3. python main.py -- After you finish step 1,2 , you can execute main.py and get imputed data.
+                   
+``` 
+
+### Part 2. INSOMNIA RANKING
+##### Model parameter
+You can set parameter by modifying Isomnia_Ranking/parameter.json file. In our paper, to rank users, we used 
+parameters as follows.
+
+```
+"Isomnia_Ranking": 
+           {"file_path": "....../sample_data_sleeps_Imp-GAIN.csv", "threshold": 0.006, "main_effect_location": 4}
+```
+
+##### How to Run
+```
+1. Setting the path of parameter.json in main.py
+   (For example : If your parameter.json is located in 'user/Documents/data/parameter.json',you should set it as json_path in 
+    main.py)
+2. Setting parameter in parameter.json:
+   (For example : If your sample_data_sleeps_Imp-GAIN.csv is saved in 'user/Documents/data/sample_data_sleeps_Imp-GAIN.csv',
+    you should set it as parameter in parameter.json ; If you want to save imputed data,you should set the path whwere you       
+    want to save a parameter in parameter.json)
+3. python main.py -- After you finish step 1,2 , you can execute main.py and get rank result.
 
 ```
